@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-TARGET_DIR="$HOME/.claude"
+TARGET_DIR="$HOME/.opencode"
 
 mkdir -p "$TARGET_DIR"
 
