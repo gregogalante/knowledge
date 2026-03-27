@@ -3,7 +3,7 @@ name: ruby-gem-lato-documentation
 description: "**DOMAIN SKILL** — Rails engine Lato gem: authentication, UI components, CRUD, operations, invitations, configuration. USE FOR: building pages/controllers/views with Lato; using lato_index, lato_form, lato_page_head components; creating CRUD interfaces; configuring Lato; managing operations/jobs; authentication/session management; customizing layout/sidebar/navbar. DO NOT USE FOR: non-Rails projects; front-end-only changes without Lato components; generic Rails questions unrelated to Lato."
 ---
 
-# Lato Gem — Rails Engine
+# Ruby Gem — Lato Documentation
 
 Lato is a Rails Engine that provides a comprehensive web application starter kit with user management, authentication, and UI components for Ruby on Rails 7+.
 

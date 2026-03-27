@@ -3,7 +3,7 @@ name: local-env-python
 description: "**WORKFLOW SKILL** — Python local environment setup via Conda. USE FOR: running Python scripts; installing Python packages; creating or activating Python environments; any task requiring the Python interpreter or pip. DO NOT USE FOR: non-Python tasks; Node.js/Ruby environments."
 ---
 
-# Local Python Environment — Conda
+# Local Env — Python
 
 ## Setup
 

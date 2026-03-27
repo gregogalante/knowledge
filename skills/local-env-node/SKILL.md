@@ -3,7 +3,7 @@ name: local-env-node
 description: "**WORKFLOW SKILL** — Node.js local environment setup via nvm. USE FOR: running Node.js scripts; installing npm/yarn packages; switching Node.js versions; any task requiring node, npm, or npx. DO NOT USE FOR: non-Node.js tasks; Python/Ruby environments."
 ---
 
-# Local Node.js Environment — nvm
+# Local Env — Node.js
 
 ## Setup
 
