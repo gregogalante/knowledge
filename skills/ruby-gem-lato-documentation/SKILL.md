@@ -1,5 +1,5 @@
 ---
-name: lato-gem-documentation
+name: ruby-gem-lato-documentation
 description: "**DOMAIN SKILL** — Rails engine Lato gem: authentication, UI components, CRUD, operations, invitations, configuration. USE FOR: building pages/controllers/views with Lato; using lato_index, lato_form, lato_page_head components; creating CRUD interfaces; configuring Lato; managing operations/jobs; authentication/session management; customizing layout/sidebar/navbar. DO NOT USE FOR: non-Rails projects; front-end-only changes without Lato components; generic Rails questions unrelated to Lato."
 ---
 
