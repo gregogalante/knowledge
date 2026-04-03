@@ -1,10 +1,10 @@
 # Knowledge
 
-## Setup for Claude Code
+## Setup for ClaudeCode
 
 ```bash
-chmod +x install-claude-code.sh
-./install-claude-code.sh
+chmod +x install-claudecode.sh
+./install-claudecode.sh
 ```
 
 ## Setup for OpenCode

@@ -9,27 +9,27 @@ description: "**DOMAIN SKILL** — Enforce JavaScript Standard Style and project
 
 All JavaScript code MUST follow [JavaScript Standard Style](https://standardjs.com/). Key rules:
 
-- **No semicolons** — mai usare il punto e virgola a fine riga
-- **2 spazi** per l'indentazione, mai tab
-- **Singoli apici** per le stringhe (`'hello'`), mai doppi apici
-- **Nessuna variabile inutilizzata** — rimuovi import e variabili non usate
-- **Spazio dopo le keyword** — `if (condition)` non `if(condition)`
-- **Spazio prima delle parentesi graffe** — `function name () {` non `function name(){`
-- **Sempre `===`** invece di `==` (tranne per `null` check: `== null`)
-- **Gestire `err`** nei callback Node.js
-- **Prefisso `window.`** per le globali del browser (tranne `document` e `navigator`)
-- **No `var`** — usare `const` di default, `let` solo se la variabile viene riassegnata
+- **No semicolons** — never use semicolons at the end of a line
+- **2 spaces** for indentation, never tabs
+- **Single quotes** for strings (`'hello'`), never double quotes
+- **No unused variables** — remove unused imports and variables
+- **Space after keywords** — `if (condition)` not `if(condition)`
+- **Space before curly braces** — `function name () {` not `function name(){`
+- **Always `===`** instead of `==` (except for `null` checks: `== null`)
+- **Handle `err`** in Node.js callbacks
+- **`window.` prefix** for browser globals (except `document` and `navigator`)
+- **No `var`** — use `const` by default, `let` only if the variable is reassigned
 
 ### Template literals
 
-Usa i template literals (`` `hello ${name}` ``) invece della concatenazione di stringhe.
+Use template literals (`` `hello ${name}` ``) instead of string concatenation.
 
 ### Arrow functions
 
-Preferire le arrow functions per callback e funzioni anonime:
+Prefer arrow functions for callbacks and anonymous functions:
 
 ```js
-// Sì
+// Yes
 const items = list.map((item) => item.name)
 
 // No
@@ -38,10 +38,10 @@ const items = list.map(function (item) { return item.name })
 
 ### Destructuring
 
-Usare destructuring per estrarre valori da oggetti e array:
+Use destructuring to extract values from objects and arrays:
 
 ```js
-// Sì
+// Yes
 const { name, age } = user
 const [first, second] = items
 
@@ -52,57 +52,57 @@ const age = user.age
 
 ### Import/Export
 
-Preferire ESM (`import`/`export`) rispetto a CommonJS (`require`/`module.exports`) nei progetti che lo supportano.
+Prefer ESM (`import`/`export`) over CommonJS (`require`/`module.exports`) in projects that support it.
 
-## Riuso del codice
+## Code Reuse
 
-Prima di creare una nuova funzione, componente o utility, **cerca sempre nel progetto se esiste già qualcosa di simile o riutilizzabile**.
+Before creating a new function, component, or utility, **always search the project first to see if something similar or reusable already exists**.
 
-### Procedura obbligatoria
+### Mandatory procedure
 
-1. **Cerca prima** — Usa ricerca semantica o grep nel progetto per trovare funzioni, componenti o helper che fanno già quello che serve
-2. **Riusa** — Se esiste qualcosa di simile, riusalo direttamente o estendilo aggiungendo parametri/opzioni
-3. **Generalizza** — Se una funzione esistente fa quasi la stessa cosa, valuta se generalizzarla invece di crearne una nuova
-4. **Crea solo se necessario** — Crea una nuova funzione/componente solo se non esiste nulla di riutilizzabile
+1. **Search first** — Use semantic search or grep in the project to find functions, components, or helpers that already do what you need
+2. **Reuse** — If something similar exists, reuse it directly or extend it by adding parameters/options
+3. **Generalize** — If an existing function does almost the same thing, consider generalizing it instead of creating a new one
+4. **Create only if necessary** — Create a new function/component only if nothing reusable exists
 
-### Segnali di duplicazione
+### Signs of duplication
 
-Quando stai per scrivere codice, chiediti:
-- Esiste già un helper/utility che fa questo?
-- C'è un componente simile che potrebbe essere parametrizzato?
-- Questa logica è già presente altrove nel progetto?
+When about to write code, ask yourself:
+- Does a helper/utility already exist for this?
+- Is there a similar component that could be parameterized?
+- Is this logic already present elsewhere in the project?
 
-Se la risposta è sì a una di queste domande, riusa il codice esistente.
+If the answer is yes to any of these, reuse the existing code.
 
-### Estrazione di codice comune
+### Extracting common code
 
-Se trovi lo stesso pattern ripetuto in più punti:
-- Estrailo in una funzione/componente condiviso
-- Posizionalo nella cartella appropriata (vedi sezione successiva)
-- Aggiorna i punti esistenti per usare la versione condivisa
+If you find the same pattern repeated in multiple places:
+- Extract it into a shared function/component
+- Place it in the appropriate folder (see next section)
+- Update existing usages to use the shared version
 
-## Posizionamento file nel progetto
+## File placement in the project
 
-Quando crei nuovi file, **rispetta la struttura e le convenzioni esistenti** del progetto.
+When creating new files, **respect the existing structure and conventions** of the project.
 
-### Procedura obbligatoria
+### Mandatory procedure
 
-1. **Analizza la struttura** — Prima di creare un file, esplora la struttura del progetto per capire dove vanno posizionati i diversi tipi di file
-2. **Segui i pattern** — Se il progetto ha una convenzione (es. componenti in `components/`, utility in `utils/`, hook in `hooks/`), seguila
-3. **Coerenza** — Un file dello stesso tipo deve andare nella stessa cartella dei suoi simili
-4. **Non creare cartelle nuove** senza necessità — usa quelle esistenti quando possibile
+1. **Analyze the structure** — Before creating a file, explore the project structure to understand where different types of files belong
+2. **Follow the patterns** — If the project has a convention (e.g. components in `components/`, utilities in `utils/`, hooks in `hooks/`), follow it
+3. **Consistency** — A file of the same type must go in the same folder as its siblings
+4. **Don't create new folders** unnecessarily — use existing ones when possible
 
-### Regole generali
+### General rules
 
-| Tipo di file | Dove cercarlo |
+| File type | Where to look |
 |---|---|
-| Componenti UI | `components/`, `src/components/`, o nella feature corrispondente |
-| Utility/Helper | `utils/`, `lib/`, `libs/`, `helpers/` |
-| Hook (React) | `hooks/`, `src/hooks/` |
-| Costanti | `constants/`, `config/` |
-| Tipi/Interfacce | `types/`, o co-locati con il modulo |
-| Test | Co-locati (`__tests__/`, `.test.js`) o in `test/` |
-| Servizi/API | `services/`, `api/` |
+| UI Components | `components/`, `src/components/`, or in the corresponding feature |
+| Utilities/Helpers | `utils/`, `lib/`, `libs/`, `helpers/` |
+| Hooks (React) | `hooks/`, `src/hooks/` |
+| Constants | `constants/`, `config/` |
+| Types/Interfaces | `types/`, or co-located with the module |
+| Tests | Co-located (`__tests__/`, `.test.js`) or in `test/` |
+| Services/API | `services/`, `api/` |
 | Store/State | `store/`, `state/` |
 
-Se il progetto non ha una di queste cartelle, **guarda dove sono posizionati file simili** e segui la stessa convenzione.
+If the project doesn't have one of these folders, **look at where similar files are placed** and follow the same convention.
