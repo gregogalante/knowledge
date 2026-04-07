@@ -1,6 +1,6 @@
 ---
 name: local-env
-description: "Local environment setup for Node.js (nvm), Python (Conda), and Ruby (rbenv). USE FOR: running scripts; installing packages; switching language versions; any task requiring node/npm/npx, python/pip/conda, or ruby/gem/bundle. DO NOT USE FOR: tasks unrelated to these three runtimes."
+description: "**ENV SKILL** — Local dev environment: Node.js (nvm), Python (Conda), Ruby (rbenv). Auto-applies before running any terminal command, script, build, or test that needs node, npm, npx, yarn, pnpm, python, pip, conda, ruby, gem, bundle, rake, or rails. USE FOR: executing scripts; installing packages; switching runtime versions; starting servers; running tests; building projects; any shell task requiring these runtimes. DO NOT USE FOR: tasks unrelated to Node.js, Python, or Ruby."
 ---
 
 # Local Environment Setup

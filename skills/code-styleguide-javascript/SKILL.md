@@ -1,6 +1,6 @@
 ---
 name: code-styleguide-javascript
-description: "Code style guide for JavaScript. USE FOR: writing or reviewing JavaScript/JSX code; creating new files, functions, or components; refactoring; code reviews. DO NOT USE FOR: non-JavaScript languages; configuration-only changes; documentation-only edits."
+description: "**STYLE SKILL** — JavaScript/JS/JSX coding conventions (Standard Style). Auto-applies when writing, editing, reviewing, or refactoring any .js, .jsx, .mjs file or JavaScript/React/Node.js code. USE FOR: creating functions, components, modules, hooks; code review; formatting; fixing style; destructuring; imports/exports; arrow functions; template literals; const/let usage; file placement; code reuse checks. Enforces no semicolons, single quotes, 2-space indent. DO NOT USE FOR: non-JavaScript languages; config-only or docs-only edits."
 ---
 
 # Code Style Guide — JavaScript
