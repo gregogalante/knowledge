@@ -80,7 +80,7 @@ alias rails-db-dev="rm -rf db/schema.rb && rails db:drop RAILS_ENV=development &
 
 alias rails-db-test="rm -rf db/schema.rb && rails db:drop RAILS_ENV=test && rails db:create RAILS_ENV=test && rails db:migrate RAILS_ENV=test && rails db:seed RAILS_ENV=test"
 
-alias rails-kill="kill -9 `cat tmp/pids/server.pid` && rm -rf tmp/pids/server.pid"
+alias rails-kill='kill -9 `cat tmp/pids/server.pid` && rm -rf tmp/pids/server.pid'
 
 # Compile React native project for Android
 
