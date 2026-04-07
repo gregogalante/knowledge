@@ -1,6 +1,6 @@
 ---
 name: code-styleguide-javascript
-description: "**DOMAIN SKILL** — Enforce JavaScript Standard Style and project hygiene. USE FOR: writing or reviewing JavaScript/JSX code; creating new files, functions, or components; refactoring; code reviews. DO NOT USE FOR: non-JavaScript languages; configuration-only changes; documentation-only edits."
+description: "Code style guide for JavaScript. USE FOR: writing or reviewing JavaScript/JSX code; creating new files, functions, or components; refactoring; code reviews. DO NOT USE FOR: non-JavaScript languages; configuration-only changes; documentation-only edits."
 ---
 
 # Code Style Guide — JavaScript

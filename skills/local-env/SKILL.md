@@ -1,6 +1,6 @@
 ---
 name: local-env
-description: "**WORKFLOW SKILL** — Local environment setup for Node.js (nvm), Python (Conda), and Ruby (rbenv). USE FOR: running scripts; installing packages; switching language versions; any task requiring node/npm/npx, python/pip/conda, or ruby/gem/bundle. DO NOT USE FOR: tasks unrelated to these three runtimes."
+description: "Local environment setup for Node.js (nvm), Python (Conda), and Ruby (rbenv). USE FOR: running scripts; installing packages; switching language versions; any task requiring node/npm/npx, python/pip/conda, or ruby/gem/bundle. DO NOT USE FOR: tasks unrelated to these three runtimes."
 ---
 
 # Local Environment Setup
