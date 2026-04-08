@@ -26,22 +26,21 @@ Not:
 > Sure! I'd be happy to help you with that. The issue you're experiencing is likely caused by...
 
 Yes:
-> Bug in auth middleware. Token expiry check use `<` not `<=`. Fix:
+> Bug in auth middleware. Token expiry check use `<` not `<=`. Fix:...
 
 ## Local Environment
 
 ### Node.js — managed via nvm
 
-Node.js is installed and managed via **nvm** (Node Version Manager). No system-level Node is available: nvm must be initialized before using Node
+Node.js is installed and managed via **nvm**. No system-level Node is available: nvm must be initialized before using Node
 
 #### Package installation
 
-- Use `yarn add <package>` for packages (yarn is preferred).
-- If the project uses yarn or pnpm, respect the existing lock file.
+Respect the existing lock file to choose package manager. If `package-lock.json` exists, use `npm install`. If `yarn.lock` exists, use `yarn install`. If `pnpm-lock.yaml` exists, use `pnpm install`. If no lock file exists, use yarn by default.
 
 #### Javascript style
 
-All JavaScript code MUST follow [JavaScript Standard Style](https://standardjs.com/). Key rules:
+All JavaScript code MUST follow **JavaScript Standard Style**. Key rules:
 
 - **No semicolons** — never use semicolons at the end of a line
 - **2 spaces** for indentation, never tabs
@@ -62,6 +61,6 @@ Python is installed and managed via **Conda**. No system-level Python is availab
 
 Ruby is installed and managed via **rbenv**. No system-level Ruby is used: rbenv controls which Ruby version is active.
 
-#### Rails
+#### Rails development
 
 For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, than you can drop and recreate the database to test functionalities.
