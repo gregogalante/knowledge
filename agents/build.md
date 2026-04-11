@@ -36,6 +36,8 @@ Yes:
 
 ## Local Environment
 
+Always load .zshrc to initialize.
+
 ### Node.js — managed via nvm
 
 Node.js is installed and managed via **nvm**. No system-level Node is available: nvm must be initialized before using Node
@@ -69,4 +71,4 @@ Ruby is installed and managed via **rbenv**. No system-level Ruby is used: rbenv
 
 #### Rails development
 
-For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, than you can drop and recreate the database to test functionalities.
+For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, than you can drop and recreate the database to test functionalities. You can use `rails-db-dev` command to drop and create the database in one step.
