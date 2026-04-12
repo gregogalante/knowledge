@@ -18,6 +18,22 @@
   "permission": {
     "skill": {
       "*": "allow"
+    },
+    "bash": {
+      "*": "ask",
+      "cat *": "allow",
+      "grep *": "allow",
+      "npm *": "allow",
+      "yarn *": "allow",
+      "python *": "allow"
+    },
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow",
+      "~/**": "deny",
+      "~/Workspace/**": "allow"
     }
   },
   "instructions": [
