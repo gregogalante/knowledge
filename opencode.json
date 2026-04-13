@@ -24,6 +24,7 @@
       "cat *": "allow",
       "grep *": "allow",
       "mkdir *": "allow",
+      "find *": "allow",
       "npm *": "allow",
       "yarn *": "allow",
       "python *": "allow"
