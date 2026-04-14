@@ -25,6 +25,7 @@
       "grep *": "allow",
       "mkdir *": "allow",
       "find *": "allow",
+      "source *": "allow",
       "npm *": "allow",
       "yarn *": "allow",
       "python *": "allow"
