@@ -29,6 +29,8 @@
       "source *": "allow",
       "which *": "allow",
       "npm *": "allow",
+      "npx *": "allow",
+      "node *": "allow",
       "yarn *": "allow",
       "python *": "allow",
       "bundle *": "allow",
