@@ -46,6 +46,7 @@
     }
   },
   "instructions": [
+    "doc/*",
     "docs/*",
     "README.md",
     "AGENTS.md"
