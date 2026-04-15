@@ -27,6 +27,7 @@
       "mkdir *": "allow",
       "find *": "allow",
       "source *": "allow",
+      "which *": "allow",
       "npm *": "allow",
       "yarn *": "allow",
       "python *": "allow",
