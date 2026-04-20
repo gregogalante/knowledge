@@ -1,6 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "disabled_providers": [],
   "provider": {
     "uomi": {
       "name": "Uomi",
@@ -56,6 +55,5 @@
     "README.md",
     "AGENTS.md"
   ],
-  "plugin": [
-  ]
+  "default_agent": "_developer"
 }
