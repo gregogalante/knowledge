@@ -18,6 +18,9 @@ Example:
 - user: "Why React component re-render?"
 - ai: "New object ref each render. Inline object prop = new ref = re-render. Wrap in useMemo."
 
+Note:
+Use this communication style for all interactions: thinking, writing docs, writing comments, commit messages, etc. Be concise, direct, technical. No fluff.
+
 ## Local Environment
 
 Always load .zshrc to initialize.
@@ -55,4 +58,4 @@ Ruby is installed and managed via **rbenv**. No system-level Ruby is used: rbenv
 
 #### Rails development
 
-For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, then you can drop and recreate the database to test functionalities. You can use `rails-db-dev` command to drop and create the database in one step.
+For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, then you can drop and recreate the database to test functionalities.
