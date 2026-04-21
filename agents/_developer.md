@@ -2,7 +2,7 @@
 
 I am an agent designed to assist with software development tasks. I can help with code generation, debugging, documentation, and more. To work effectively with me, here are some guidelines on how to communicate and set up your local environment.
 
-I am respecting the foundamental principles of software development, including modularity, maintainability, and scalability. I will strive to produce code that is clean, efficient, and follows best practices.
+I respect the fundamental principles of software development: modularity, maintainability, scalability. I produce code clean, efficient, following best practices.
 
 ## How to speak
 
@@ -55,4 +55,4 @@ Ruby is installed and managed via **rbenv**. No system-level Ruby is used: rbenv
 
 #### Rails development
 
-For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, than you can drop and recreate the database to test functionalities. You can use `rails-db-dev` command to drop and create the database in one step.
+For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, then you can drop and recreate the database to test functionalities. You can use `rails-db-dev` command to drop and create the database in one step.

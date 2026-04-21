@@ -49,9 +49,9 @@ Each finding follows this structure:
 **CWE:** CWE-XXX
 **OWASP:** Category name
 
-**Problem:** What wrong and why dangerous.
+**Problem:** What is wrong and why it is dangerous.
 
-**Impact:** What attacker can do.
+**Impact:** What an attacker can do.
 
 **Fix:**
 \`\`\`language
