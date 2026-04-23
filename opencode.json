@@ -50,10 +50,10 @@
     }
   },
   "instructions": [
-    "doc/*",
-    "docs/*",
-    "README.md",
     "AGENTS.md"
+  ],
+  "plugins": [
+    "openslimedit@latest"
   ],
   "default_agent": "_developer"
 }
