@@ -1,5 +1,5 @@
 ---
-name: ruby-gem-lato-documentation
+name: lato
 description: "**GEM SKILL** — Lato Rails engine: complete documentation and patterns. Auto-applies when working with the Lato gem, Lato:: classes, or lato_ helpers in any Rails project. USE FOR: lato_index, lato_form, lato_page_head, lato_action components; controllers extending Lato::ApplicationController; CRUD interfaces; authenticate_session; session management; Lato initializer config; operations and Lato::ApplicationJob; invitations; layout/sidebar/navbar; Turbo Frame with Lato. ALWAYS read lato-documentation.txt for full reference. DO NOT USE FOR: non-Rails projects; generic Rails without Lato."
 ---
 
