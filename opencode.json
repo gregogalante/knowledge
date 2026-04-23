@@ -52,7 +52,7 @@
   "instructions": [
     "AGENTS.md"
   ],
-  "plugins": [
+  "plugin": [
     "openslimedit@latest"
   ],
   "default_agent": "_developer"
