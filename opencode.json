@@ -27,6 +27,8 @@
       "mkdir *": "allow",
       "find *": "allow",
       "source *": "allow",
+      "source ~/.zshrc": "allow",
+      "source ~/.zshrc && *": "allow",
       "which *": "allow",
       "tail *": "allow",
       "sed *": "allow",
@@ -39,7 +41,9 @@
       "bundle *": "allow",
       "gem *": "allow",
       "pip *": "allow",
-      "pip3 *": "allow"
+      "pip3 *": "allow",
+      "bin/rails *": "allow",
+      "rails *": "allow"
     },
     "read": {
       "*": "allow",
