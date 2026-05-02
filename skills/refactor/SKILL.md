@@ -46,6 +46,35 @@ Produce a plan presented to the user BEFORE making any changes. The plan MUST in
   - Order of execution (dependencies between changes).
 - **Elements deliberately NOT touched** and why (e.g. risky area without tests, out of scope, acceptable trade-off).
 
+Plan MUST use this exact output template:
+
+```markdown
+## Refactor Plan
+
+### 1) Scope
+- In scope:
+- Out of scope:
+
+### 2) Issues found
+1. **Location**: `path/file` (function/class)
+   - **Type**: duplication | maintainability | optimization | structure | readability
+   - **Impact**:
+
+### 3) Proposed changes
+1. **Change**:
+   - **Rationale**:
+   - **Risk**: low | medium | high
+   - **Affected areas**:
+   - **Execution order**:
+
+### 4) Not touched
+- Item:
+  - Reason:
+
+### 5) Approval requested
+Please confirm this plan before I apply changes.
+```
+
 ### Phase 3 — Approval
 
 Do NOT apply changes without explicit confirmation from the user. Present the plan and wait for approval. The user may request modifications, reductions, or extensions of the plan.
@@ -56,8 +85,9 @@ Once approved:
 
 1. Apply changes in the established order, in small coherent steps.
 2. After each significant change, verify that existing tests still pass (if present) or suggest the user run them.
-3. Do not mix refactoring with functional changes: if a bug is discovered during the refactor, flag it separately without fixing it within the refactor (unless explicitly requested).
-4. Keep commits/logically separate units of change if the context allows (e.g. one intervention = one semantic block of changes).
+3. Do not mix refactoring with functional changes: if bug discovered, flag separately without fixing it within refactor.
+4. **Blocking bug exception**: if bug prevents any meaningful verification, agent MAY propose minimal isolated hotfix as separate step and MUST request explicit user approval before applying it.
+5. Keep commits/logically separate units of change if the context allows (e.g. one intervention = one semantic block of changes).
 
 ### Phase 5 — Final summary
 
@@ -66,6 +96,21 @@ At the end of the execution, provide a concise summary including:
 - Changes actually applied (with paths of modified files).
 - Changes from the plan that were NOT applied and why.
 - Residual risks and suggested next steps (e.g. tests to be added, follow-up refactor).
+
+## Output contract (Definition of Done)
+
+Refactor task is done when all are true:
+1. Plan delivered in mandatory template.
+2. Explicit user approval received before edits.
+3. Applied changes keep observable behavior unchanged (or documented approved exception).
+4. Verification evidence provided (tests/commands + pass/fail).
+5. Final summary includes applied/not-applied items and residual risks.
+
+If blocked, return:
+- blocker,
+- impact on plan,
+- attempted mitigations,
+- minimal user decision needed.
 
 ## Typical refactoring patterns to evaluate
 

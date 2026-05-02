@@ -15,6 +15,7 @@ When this skill is invoked, the agent MUST generate a complete report of the wor
 2. **Create the `reports/` directory** if it does not exist.
 3. **Do not ask the user for confirmation**: generate the report autonomously using the context of the current conversation.
 4. **The report must be complete**: do not over-summarize. Include all relevant details of the work performed.
+5. **Evidence is mandatory**: include executed commands, outputs, and validation status.
 
 ## Mandatory report structure
 
@@ -53,6 +54,14 @@ For each non-trivial decision taken during the work:
 
 State of the project after the intervention. What now works, what has changed compared to the starting point.
 
+## Evidence
+
+List concrete verification evidence:
+- **Command**: exact command executed.
+- **When**: timestamp or sequence marker.
+- **Result**: pass/fail.
+- **Key output**: essential output snippet.
+
 ## Notes and follow-up
 
 Any open points, remaining todos, known risks, or suggestions for future work.
@@ -65,6 +74,17 @@ Any open points, remaining todos, known risks, or suggestions for future work.
 - **Be honest**: if something was not completed, if there are doubts or trade-offs, report them in the "Notes and follow-up" section.
 - **Avoid fluff**: no generic phrases like "I improved the code". Specify what and how.
 - **Language**: use the same language as the conversation with the user.
+
+## Output contract (Definition of Done)
+
+Report task is done when all are true:
+1. File created at `reports/{timestamp}-{task_description}.md`.
+2. Mandatory markdown structure respected, including `## Evidence`.
+3. Activities and decisions reference real files/actions.
+4. Evidence section includes commands and outcomes.
+5. User informed with final report path.
+
+If evidence unavailable, report must explicitly state why and what prevented capture.
 
 ## Operational procedure
 
