@@ -15,6 +15,7 @@ Use this skill when task includes any of:
 - `Lato::` classes/modules
 - `lato_` helpers/components
 - controllers/layout/session flow built on Lato
+- specific Lato patterns (index, form, operations, etc.)
 
 Do not use for generic Rails tasks without Lato usage.
 
