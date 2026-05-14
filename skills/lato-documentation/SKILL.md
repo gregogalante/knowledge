@@ -1,5 +1,5 @@
 ---
-name: lato
+name: lato-documentation
 description: >
   Use this skill when working with the Lato Rails gem (admin panel engine).
   Provides full documentation: installation, configuration, authentication,
