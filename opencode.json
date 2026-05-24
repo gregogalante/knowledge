@@ -1,19 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "uomi": {
-      "name": "Uomi",
-      "npm": "@ai-sdk/openai-compatible",
-      "models": {
-        "uomi": {
-          "name": "Uomi"
-        }
-      },
-      "options": {
-        "baseURL": "https://openclaw.uomi.ai/v1"
-      }
-    }
-  },
   "permission": {
     "skill": {
       "*": "allow"
@@ -60,5 +46,9 @@
   "plugin": [
     "openslimedit@latest"
   ],
-  "default_agent": "_developer"
+  "default_agent": "_developer",
+  "disabled_providers": [
+    "uomi_gateway",
+    "uomi_openclaw"
+  ]
 }
