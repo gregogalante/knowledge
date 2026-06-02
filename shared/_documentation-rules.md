@@ -1,17 +1,23 @@
 ## Documentation rules
 
-Be sure AGENTS.md exists in the root of the repository. If not build it with basic documentation about the project.
-Split documentation in `docs/` folder if it grows too big. Use markdown files with clear structure and headings. Write only important information, avoid fluff.
+Ensure `AGENTS.md` exists at repo root. If missing, create with project basics. If `README.md` already covers overview/setup, do not duplicate — keep `AGENTS.md` focused on agent-facing instructions (conventions, commands, architecture pointers).
 
-Thinks to write in documentation:
+Split into `docs/` when `AGENTS.md` exceeds ~300 lines or covers >3 distinct domains. Markdown only, clear headings, no fluff.
+
+Language: English.
+
+Update docs when: build changes, run/test commands change, project structure shifts, key dependencies added/removed, conventions evolve.
+
+Things to write:
 - Project overview and purpose
-- Shared rules and guidelines (coding style, local environment setup, etc)
-- Instructions for running and testing the code
-- Explanation of key components and architecture
-- Shared code snippets (class, function, ui components, style guidelines, etc)
+- Shared rules: coding style, local env setup
+- Run / test / build commands
+- Key components and architecture (high-level)
+- Recurring patterns and conventions with minimal examples
 
-Thinks to not write in documentation:
-- Detailed explanations of how to implement specific features (keep documentation high-level, not implementation-specific)
-- Personal opinions or preferences (keep documentation objective and focused on facts)
-- Outdated information (keep documentation up to date with the current state of the codebase)
-- Step-by-step instructions for specific tasks (keep documentation focused on general guidelines and principles, not specific workflows)
+Things NOT to write:
+- Feature implementation details
+- Personal opinions
+- Outdated info
+- Step-by-step task workflows
+- Full class / component dumps (link to source instead)

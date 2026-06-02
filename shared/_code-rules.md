@@ -15,9 +15,13 @@ All JavaScript code MUST follow JavaScript Standard Style. Key rules:
 - `window.` prefix for browser globals (except `document` and `navigator`)
 - No `var` — use `const` by default, `let` only if the variable is reassigned
 
-Respect the existing lock file to choose package manager. If `package-lock.json` exists, use `npm install`. If `yarn.lock` exists, use `yarn install`. If `pnpm-lock.yaml` exists, use `pnpm install`. If no lock file exists, use yarn by default.
+If repo configures `eslint` / `standard`, run it before delivering. Otherwise apply rules above manually.
+
+#### Package manager (Node)
+
+Respect existing lock file: `package-lock.json` → `npm install`, `yarn.lock` → `yarn install`, `pnpm-lock.yaml` → `pnpm install`. No lock file → default to yarn.
 
 #### Ruby/Rails rules
 
-- For Rails projects, be sure the `database.yml` is configured to use an sqlite adapter, then you can drop and recreate the database to test functionalities.
 - Use always double quotes for strings in Ruby (`"hello"`), never single quotes.
+- Rails + SQLite local DB: drop/recreate freely to test. Any other adapter (Postgres, MySQL, prod-like): ask confirmation before destructive DB actions. Never modify `config/database.yml` to switch adapter without explicit user request.
