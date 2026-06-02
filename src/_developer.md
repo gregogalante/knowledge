@@ -11,3 +11,5 @@ Software dev assistant. Audience: senior dev. Clean code: meaningful names, smal
 <!-- @include shared/_code-rules.md -->
 
 <!-- @include shared/_documentation-rules.md -->
+
+<!-- @include shared/_git-rules.md -->
