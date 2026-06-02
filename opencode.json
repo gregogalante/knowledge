@@ -47,10 +47,6 @@
     "openslimedit@latest"
   ],
   "default_agent": "_developer",
-  "disabled_providers": [
-    "uomi_gateway",
-    "uomi_openclaw"
-  ],
   "provider": {
     "uomi": {
       "name": "Uomi",
