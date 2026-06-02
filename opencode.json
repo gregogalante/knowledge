@@ -29,7 +29,10 @@
       "pip *": "allow",
       "pip3 *": "allow",
       "bin/rails *": "allow",
-      "rails *": "allow"
+      "rails *": "allow",
+      "git *": "allow",
+      "docker *": "allow",
+      "docker-compose *": "allow"
     },
     "read": {
       "*": "allow",
