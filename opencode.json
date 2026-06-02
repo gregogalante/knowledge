@@ -43,9 +43,7 @@
   "instructions": [
     "AGENTS.md"
   ],
-  "plugin": [
-    "openslimedit@latest"
-  ],
+  "plugin": [],
   "default_agent": "_developer",
   "provider": {
     "uomi": {
