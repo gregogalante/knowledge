@@ -1,5 +1,12 @@
 # Knowledge
 
+## Build agents
+
+```bash
+chmod +x build.sh
+./build.sh
+```
+
 ## Setup for OpenCode
 
 ```bash
