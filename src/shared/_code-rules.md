@@ -9,7 +9,7 @@ All JavaScript code MUST follow JavaScript Standard Style. Key rules:
 - Single quotes for strings (`'hello'`), never double quotes
 - No unused variables — remove unused imports and variables
 - Space after keywords — `if (condition)` not `if(condition)`
-- Space before curly braces — `function name () {` not `function name(){`
+- Space before curly braces — `function name () {` not `function name(){}`
 - Always `===` instead of `==` (except for `null` checks: `== null`)
 - Handle `err` in Node.js callbacks
 - `window.` prefix for browser globals (except `document` and `navigator`)
