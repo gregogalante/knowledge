@@ -1,5 +1,5 @@
 name = "_developer"
-description = "Software dev assistant. Active always when coding."
+description = "Software dev assistant. Active always for coding tasks."
 developer_instructions = """
 ## Agent Guide
 

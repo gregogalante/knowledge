@@ -1,6 +1,6 @@
 # Knowledge
 
-`src/` is source of truth. Build writes into `opencode/agents/*.md`, `codex/agents/*.toml`, and `codex/config.toml`.
+`src/` is source of truth. Build writes into `opencode/agents/*.md`, `opencode/opencode.json`, `codex/agents/*.toml`, and `codex/config.toml`.
 
 ## Build agents
 

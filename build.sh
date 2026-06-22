@@ -4,7 +4,9 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
 SRC_DIR="$REPO_ROOT/src"
 SRC_AGENTS_DIR="$SRC_DIR/agents"
+SRC_OPENCODE_CONFIG_SRC="$SRC_DIR/opencode/opencode.json"
 OPENCODE_OUT_DIR="$REPO_ROOT/opencode/agents"
+OPENCODE_CONFIG_OUT="$REPO_ROOT/opencode/opencode.json"
 CODEX_OUT_DIR="$REPO_ROOT/codex/agents"
 CODEX_CONFIG_SRC="$SRC_DIR/codex/config.toml"
 CODEX_CONFIG_OUT="$REPO_ROOT/codex/config.toml"
@@ -101,6 +103,14 @@ if [[ -f "$CODEX_CONFIG_SRC" ]]; then
   echo "  → codex/config.toml"
 else
   echo "ERROR: Source config not found: $CODEX_CONFIG_SRC" >&2
+  exit 1
+fi
+
+if [[ -f "$SRC_OPENCODE_CONFIG_SRC" ]]; then
+  cp "$SRC_OPENCODE_CONFIG_SRC" "$OPENCODE_CONFIG_OUT"
+  echo "  → opencode/opencode.json"
+else
+  echo "ERROR: Source config not found: $SRC_OPENCODE_CONFIG_SRC" >&2
   exit 1
 fi
 
