@@ -45,14 +45,5 @@
   ],
   "plugin": [],
   "default_agent": "_developer",
-  "provider": {
-    "uomi": {
-      "name": "Uomi",
-      "npm": "@ai-sdk/openai-compatible",
-      "options": {
-        "baseURL": "https://gateway.uomi.ai/v1"
-      }
-    }
-  },
   "shell": "zsh"
 }
