@@ -10,13 +10,16 @@ OPENCODE_CONFIG_OUT="$REPO_ROOT/opencode/opencode.json"
 CODEX_OUT_DIR="$REPO_ROOT/codex/agents"
 CODEX_CONFIG_SRC="$SRC_DIR/codex/config.toml"
 CODEX_CONFIG_OUT="$REPO_ROOT/codex/config.toml"
+CLAUDE_OUT_DIR="$REPO_ROOT/claude"
+CLAUDE_OUT_FILE="$CLAUDE_OUT_DIR/CLAUDE.md"
+CLAUDE_SRC_FILE="$SRC_AGENTS_DIR/_developer.toml"
 
 if [[ ! -d "$SRC_AGENTS_DIR" ]]; then
   echo "ERROR: Source directory not found: $SRC_AGENTS_DIR" >&2
   exit 1
 fi
 
-mkdir -p "$OPENCODE_OUT_DIR" "$CODEX_OUT_DIR"
+mkdir -p "$OPENCODE_OUT_DIR" "$CODEX_OUT_DIR" "$CLAUDE_OUT_DIR"
 
 src_files=()
 while IFS= read -r src_file; do
@@ -111,6 +114,14 @@ if [[ -f "$SRC_OPENCODE_CONFIG_SRC" ]]; then
   echo "  → opencode/opencode.json"
 else
   echo "ERROR: Source config not found: $SRC_OPENCODE_CONFIG_SRC" >&2
+  exit 1
+fi
+
+if [[ -f "$CLAUDE_SRC_FILE" ]]; then
+  extract_developer_instructions "$CLAUDE_SRC_FILE" "$CLAUDE_OUT_FILE"
+  echo "  → claude/CLAUDE.md"
+else
+  echo "ERROR: Source file not found: $CLAUDE_SRC_FILE" >&2
   exit 1
 fi
 
