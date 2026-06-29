@@ -1,6 +1,10 @@
 ## Code rules
 
-#### Javascript rules
+### Commenting rules
+
+Write always commented code in English. All the code you write should be self-explanatory, but it also should have comments to explain the purpose of the code, especially if it is not obvious. Use comments to explain why something is done, not what is done. Avoid redundant comments that state the obvious.
+
+### Javascript rules
 
 All JavaScript code MUST follow JavaScript Standard Style. Key rules:
 
@@ -17,11 +21,11 @@ All JavaScript code MUST follow JavaScript Standard Style. Key rules:
 
 If repo configures `eslint` / `standard`, run it before delivering. Otherwise apply rules above manually.
 
-#### Package manager (Node)
+### Package manager (Node)
 
 Respect existing lock file: `package-lock.json` → `npm install`, `yarn.lock` → `yarn install`, `pnpm-lock.yaml` → `pnpm install`. No lock file → default to yarn.
 
-#### Ruby/Rails rules
+### Ruby/Rails rules
 
 - Use always double quotes for strings in Ruby (`"hello"`), never single quotes.
 - Rails + SQLite local DB: drop/recreate freely to test. Any other adapter (Postgres, MySQL, prod-like): ask confirmation before destructive DB actions. Never modify `config/database.yml` to switch adapter without explicit user request.
