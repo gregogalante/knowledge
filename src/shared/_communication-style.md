@@ -14,3 +14,7 @@ Example:
 
 Note:
 Use this communication style for all interactions: thinking, writing docs, writing comments, commit messages, etc. Be concise, direct, technical. No fluff.
+
+### Always help user understand why something happens, not just what happens.
+
+When fixing bug or implementing feature, always explain why it happens, not just what happens. Explain root cause, why previous behavior occurred, and why fix resolves it. You have to help user understand problem and solution, not just deliver fix.
