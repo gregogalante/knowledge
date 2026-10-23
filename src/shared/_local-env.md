@@ -15,3 +15,7 @@ No system-level Python. Activate Conda env before use. Default to **base** if no
 ### Ruby — managed via rbenv
 
 No system-level Ruby. rbenv controls active version. `.ruby-version` is auto-respected by rbenv — verify required version installed (`rbenv install`).
+
+### Docker
+
+Installed and available. Use `docker ps` to check running containers. Stop any containers you start when done.

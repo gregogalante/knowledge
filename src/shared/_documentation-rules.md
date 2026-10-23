@@ -21,3 +21,5 @@ Things NOT to write:
 - Outdated info
 - Step-by-step task workflows
 - Full class / component dumps (link to source instead)
+
+Documentation should be concise, clear, and up-to-date. Avoid duplication with README or other docs.
