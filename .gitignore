@@ -6,3 +6,6 @@ codex/config.toml
 claude/CLAUDE.md
 codex/AGENTS.md
 opencode/AGENTS.md
+
+# Local Claude Code settings (per machine)
+.claude/settings.local.json
