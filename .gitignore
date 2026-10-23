@@ -4,3 +4,5 @@ opencode/opencode.json
 codex/agents/*.toml
 codex/config.toml
 claude/CLAUDE.md
+codex/AGENTS.md
+opencode/AGENTS.md

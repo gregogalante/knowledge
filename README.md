@@ -1,24 +1,27 @@
 # Knowledge
 
-`src/` is source of truth. Build writes into `opencode/agents/*.md`, `opencode/opencode.json`, `codex/agents/*.toml`, and `codex/config.toml`.
+`src/` is source of truth. `build.sh` generates per-tool files; install scripts symlink them into each tool's user config. See [AGENTS.md](AGENTS.md) for output layout.
 
-## Build agents
+## Build
 
 ```bash
-chmod +x build.sh
 ./build.sh
 ```
 
-## Setup for OpenCode
+## Install
 
 ```bash
-chmod +x install-opencode.sh
+./install-claude.sh
+./install-codex.sh
 ./install-opencode.sh
 ```
 
-## Setup for Codex
+Note: Claude Cowork sessions ignore a symlinked `~/.claude/CLAUDE.md`.
+
+## Check
 
 ```bash
-chmod +x install-codex.sh
-./install-codex.sh
+./test.sh
 ```
+
+Exit code 1 + `FAIL` lines when a build is outdated or an install is missing, wrong or stale.

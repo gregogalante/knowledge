@@ -35,14 +35,14 @@
       "*": "allow",
       "*.env": "deny",
       "*.env.*": "deny",
-      "*.env.example": "allow",
-      "~/**": "deny",
+      "*.env.example": "allow"
+    },
+    "external_directory": {
+      "*": "allow",
+      "~/**": "ask",
       "~/Workspace/**": "allow"
     }
   },
-  "instructions": [
-    "AGENTS.md"
-  ],
   "plugin": [],
   "default_agent": "_developer",
   "shell": "zsh"

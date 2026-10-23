@@ -11,8 +11,15 @@ CODEX_OUT_DIR="$REPO_ROOT/codex/agents"
 CODEX_CONFIG_SRC="$SRC_DIR/codex/config.toml"
 CODEX_CONFIG_OUT="$REPO_ROOT/codex/config.toml"
 CLAUDE_OUT_DIR="$REPO_ROOT/claude"
-CLAUDE_OUT_FILE="$CLAUDE_OUT_DIR/CLAUDE.md"
-CLAUDE_SRC_FILE="$SRC_AGENTS_DIR/_developer.toml"
+# Global agent: its instructions become user-level rules (CLAUDE.md / AGENTS.md)
+# loaded in every session, not just a selectable agent prompt.
+GLOBAL_AGENT="_developer"
+GLOBAL_SRC_FILE="$SRC_AGENTS_DIR/$GLOBAL_AGENT.toml"
+GLOBAL_RULE_FILES=(
+  "$CLAUDE_OUT_DIR/CLAUDE.md"
+  "$REPO_ROOT/codex/AGENTS.md"
+  "$REPO_ROOT/opencode/AGENTS.md"
+)
 
 if [[ ! -d "$SRC_AGENTS_DIR" ]]; then
   echo "ERROR: Source directory not found: $SRC_AGENTS_DIR" >&2
@@ -85,6 +92,34 @@ extract_developer_instructions () {
   rm -f "$tmp_file"
 }
 
+# Writes OpenCode agent markdown. Frontmatter carries description (required by
+# OpenCode docs). Global agent gets no body: its rules load via AGENTS.md, so
+# repeating them here would inject them twice; empty prompt keeps OpenCode's
+# built-in system prompt.
+write_opencode_agent () {
+  local src_file="$1"
+  local base_name="$2"
+  local output_file="$3"
+  local description
+
+  description=$(sed -n 's/^description[[:space:]]*=[[:space:]]*"\(.*\)"[[:space:]]*$/\1/p' "$src_file")
+
+  {
+    echo "---"
+    echo "description: \"$description\""
+    [[ "$base_name" == "$GLOBAL_AGENT" ]] && echo "mode: primary"
+    echo "---"
+  } > "$output_file"
+
+  if [[ "$base_name" != "$GLOBAL_AGENT" ]]; then
+    local body_file
+    body_file=$(mktemp)
+    extract_developer_instructions "$src_file" "$body_file"
+    cat "$body_file" >> "$output_file"
+    rm -f "$body_file"
+  fi
+}
+
 for src_file in "${src_files[@]}"; do
   rel_path="${src_file#"$SRC_AGENTS_DIR/"}"
   base_name="${rel_path%.toml}"
@@ -95,7 +130,7 @@ for src_file in "${src_files[@]}"; do
 
   rm -f "$OPENCODE_OUT_DIR/$base_name.toml" "$CODEX_OUT_DIR/$base_name.md"
 
-  extract_developer_instructions "$src_file" "$open_out_file"
+  write_opencode_agent "$src_file" "$base_name" "$open_out_file"
   expand_includes "$src_file" "$codex_out_file"
   echo "  → opencode/agents/$base_name.md"
   echo "  → codex/agents/$base_name.toml"
@@ -117,13 +152,15 @@ else
   exit 1
 fi
 
-if [[ -f "$CLAUDE_SRC_FILE" ]]; then
-  extract_developer_instructions "$CLAUDE_SRC_FILE" "$CLAUDE_OUT_FILE"
-  echo "  → claude/CLAUDE.md"
-else
-  echo "ERROR: Source file not found: $CLAUDE_SRC_FILE" >&2
+if [[ ! -f "$GLOBAL_SRC_FILE" ]]; then
+  echo "ERROR: Source file not found: $GLOBAL_SRC_FILE" >&2
   exit 1
 fi
+
+for rule_file in "${GLOBAL_RULE_FILES[@]}"; do
+  extract_developer_instructions "$GLOBAL_SRC_FILE" "$rule_file"
+  echo "  → ${rule_file#"$REPO_ROOT/"}"
+done
 
 echo ""
 echo "Build complete. $(date '+%Y-%m-%d %H:%M:%S')"
