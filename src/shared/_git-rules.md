@@ -17,6 +17,10 @@ Push (trigger: user says `push`):
 - Explicit step, separate from commit.
 - Ask confirmation before `push --force` or `push --force-with-lease`.
 
+End of work:
+- Task done and repo has uncommitted changes or unpushed commits (`git status`, `git log @{u}..`) → ask user whether to commit and push. Never do it without their yes: commit and push triggers above still apply.
+- Branch has no upstream → ask too, since work exists only locally.
+
 Pull request (trigger: user says `pull request` / `pr`):
 - Open PR from current branch to default branch.
 - Title: same convention as commit subject.
