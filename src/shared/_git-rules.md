@@ -22,6 +22,10 @@ Pull request (trigger: user says `pull request` / `pr`):
 - Title: same convention as commit subject.
 - Description: what changed + why. Skip reviewer assignment unless user specifies.
 
+Merge into `main` / `master` (trigger: user asks to merge):
+- After successful merge, always delete the merged branch, both local (`git branch -d`) and remote if it exists (`git push origin --delete <branch>`). No confirmation needed: branch is fully merged, so nothing is lost and it would otherwise be left abandoned.
+- `-d` refuses (branch not fully merged) → stop and report, delete nothing, never fall back to `-D` without confirmation.
+
 Destructive ops — ask confirmation before:
 - `reset --hard`, `clean -fd`
 - `rebase` on already-pushed branch
