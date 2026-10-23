@@ -13,4 +13,5 @@ Repo rules.
 - `install-codex.sh` links `~/.codex/{AGENTS.md,agents,config.toml}`.
 - `install-opencode.sh` links `~/.config/opencode/{AGENTS.md,agents,opencode.json}`.
 - `test.sh` checks build is fresh and all three installs point at it. Run after changes.
+- `clean-sessions.sh` deletes local session history of all three tools. Dry-run unless `--yes`.
 - `_backups/` is archival. Leave unchanged.
