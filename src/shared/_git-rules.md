@@ -4,7 +4,7 @@ Skip these rules if not a git repo (`git rev-parse --is-inside-work-tree` fails)
 
 Branching:
 - No direct work on `main` / `master`. Create branch first.
-- If user explicitly requests work on main/master, ask confirmation before committing.
+- User explicitly names main/master in request (e.g. "commit on main", "push to main") = confirmation given, proceed. Landing on main without that request → ask first.
 - Branch name: conventional prefix + descriptive slug. Prefixes: `feature/`, `bugfix/`, `hotfix/`, `chore/`, `refactor/`, `docs/`, `test/`. Example: `feature/add-user-endpoint`.
 
 Commit (trigger: user says `commit`):

@@ -1,12 +1,10 @@
 ## Documentation rules
 
-Ensure `AGENTS.md` exists at repo root. If missing, create with project basics. If `README.md` already covers overview/setup, do not duplicate — keep `AGENTS.md` focused on agent-facing instructions (conventions, commands, architecture pointers).
+`AGENTS.md` at repo root = agent-facing instructions (conventions, commands, architecture pointers). Create or update it only when user asks, or when change affects what it covers (build, run/test commands, structure, key dependencies, conventions). If `README.md` already covers overview/setup, do not duplicate.
 
 Split into `docs/` when `AGENTS.md` exceeds ~300 lines or covers >3 distinct domains. Markdown only, clear headings, no fluff.
 
 Language: English.
-
-Update docs when: build changes, run/test commands change, project structure shifts, key dependencies added/removed, conventions evolve.
 
 Things to write:
 - Project overview and purpose
@@ -21,5 +19,3 @@ Things NOT to write:
 - Outdated info
 - Step-by-step task workflows
 - Full class / component dumps (link to source instead)
-
-Documentation should be concise, clear, and up-to-date. Avoid duplication with README or other docs.

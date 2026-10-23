@@ -1,31 +1,20 @@
 ## Code rules
 
-### Commenting rules
+Repo config wins: existing linter/formatter config (`.eslintrc`, `.prettierrc`, `.rubocop.yml`, `.editorconfig`, ...) and surrounding code style override defaults below. Defaults apply only when repo has none.
 
-Write always commented code in English. All the code you write should be self-explanatory, but it also should have comments to explain the purpose of the code, especially if it is not obvious. Use comments to explain why something is done, not what is done. Avoid redundant comments that state the obvious.
+### Comments
 
-### Javascript rules
+English. Comment non-obvious why (intent, constraint, workaround), not what. Match comment density of surrounding code. No comments restating code.
 
-All JavaScript code MUST follow JavaScript Standard Style. Key rules:
+### JavaScript
 
-- No semicolons — never use semicolons at the end of a line
-- 2 spaces for indentation, never tabs
-- Single quotes for strings (`'hello'`), never double quotes
-- No unused variables — remove unused imports and variables
-- Space after keywords — `if (condition)` not `if(condition)`
-- Space before curly braces — `function name () {` not `function name(){}`
-- Always `===` instead of `==` (except for `null` checks: `== null`)
-- Handle `err` in Node.js callbacks
-- `window.` prefix for browser globals (except `document` and `navigator`)
-- No `var` — use `const` by default, `let` only if the variable is reassigned
-
-If repo configures `eslint` / `standard`, run it before delivering. Otherwise apply rules above manually.
+Default style: JavaScript Standard Style (no semicolons, 2 spaces, single quotes, `===`, `const`/`let` no `var`). If repo configures `eslint` / `standard`, run it before delivering.
 
 ### Package manager (Node)
 
 Respect existing lock file: `package-lock.json` → `npm install`, `yarn.lock` → `yarn install`, `pnpm-lock.yaml` → `pnpm install`. No lock file → default to yarn.
 
-### Ruby/Rails rules
+### Ruby/Rails
 
-- Use always double quotes for strings in Ruby (`"hello"`), never single quotes.
+- Default string quotes: double (`"hello"`).
 - Rails + SQLite local DB: drop/recreate freely to test. Any other adapter (Postgres, MySQL, prod-like): ask confirmation before destructive DB actions. Never modify `config/database.yml` to switch adapter without explicit user request.

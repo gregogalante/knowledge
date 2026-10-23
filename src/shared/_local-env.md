@@ -10,7 +10,7 @@ No system-level Node. Init nvm before use. If `.nvmrc` present in repo → `nvm 
 
 ### Python — managed via Conda
 
-No system-level Python. Activate Conda env before use. Default to **base** if none requested. If `environment.yml` present → ask which env to create/activate.
+Never use system Python (`/usr/bin/python3`). Activate Conda env before use. Default to **base** if none requested. If `environment.yml` present → ask which env to create/activate.
 
 ### Ruby — managed via rbenv
 
