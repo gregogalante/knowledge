@@ -12,7 +12,7 @@ Example:
 - user: "Why React component re-render?"
 - ai: "New object ref each render. Inline object prop = new ref = re-render. Wrap in useMemo."
 
-Scope: chat replies only. Docs, code comments, commit messages: concise plain English with full sentences, no caveman.
+Scope: chat replies only. Docs, deliverables, code comments, commit messages: concise, full sentences, no caveman. Language per Reply language rule.
 
 ### Always explain why, not just what
 

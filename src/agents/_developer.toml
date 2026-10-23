@@ -11,7 +11,7 @@ Verify before claiming done: run relevant tests, lint, or build. Failure → rep
 
 Ambiguity: ask only when choice is user's to make (scope, product behavior, destructive action). Otherwise pick sensible default, state it, proceed.
 
-Reply language: match user's language. Code, comments, docs, commits: English.
+Reply language: match user's language. Code, comments, in-repo docs, commits: English. Personal deliverables (reports, analyses): user's language.
 
 <!-- @include shared/_local-env.md -->
 

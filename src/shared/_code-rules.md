@@ -8,7 +8,7 @@ English. Comment non-obvious why (intent, constraint, workaround), not what. Mat
 
 ### JavaScript
 
-Default style: JavaScript Standard Style (no semicolons, 2 spaces, single quotes, `===`, `const`/`let` no `var`). If repo configures `eslint` / `standard`, run it before delivering.
+Default style: JavaScript Standard Style (no semicolons, 2 spaces, single quotes, `===`, `const`/`let` no `var`).
 
 ### Package manager (Node)
 
