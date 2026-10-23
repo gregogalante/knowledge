@@ -8,8 +8,6 @@ SRC_OPENCODE_CONFIG_SRC="$SRC_DIR/opencode/opencode.json"
 OPENCODE_OUT_DIR="$REPO_ROOT/opencode/agents"
 OPENCODE_CONFIG_OUT="$REPO_ROOT/opencode/opencode.json"
 CODEX_OUT_DIR="$REPO_ROOT/codex/agents"
-CODEX_CONFIG_SRC="$SRC_DIR/codex/config.toml"
-CODEX_CONFIG_OUT="$REPO_ROOT/codex/config.toml"
 CLAUDE_OUT_DIR="$REPO_ROOT/claude"
 # Global agent: its instructions become user-level rules (CLAUDE.md / AGENTS.md)
 # loaded in every session, not just a selectable agent prompt.
@@ -135,14 +133,6 @@ for src_file in "${src_files[@]}"; do
   echo "  → opencode/agents/$base_name.md"
   echo "  → codex/agents/$base_name.toml"
 done
-
-if [[ -f "$CODEX_CONFIG_SRC" ]]; then
-  cp "$CODEX_CONFIG_SRC" "$CODEX_CONFIG_OUT"
-  echo "  → codex/config.toml"
-else
-  echo "ERROR: Source config not found: $CODEX_CONFIG_SRC" >&2
-  exit 1
-fi
 
 if [[ -f "$SRC_OPENCODE_CONFIG_SRC" ]]; then
   cp "$SRC_OPENCODE_CONFIG_SRC" "$OPENCODE_CONFIG_OUT"

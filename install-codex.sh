@@ -20,6 +20,6 @@ fi
 # AGENTS.md = main-session rules; agents/ = subagents spawned on demand.
 ln -sfn "$SCRIPT_DIR/codex/AGENTS.md" "$TARGET_DIR/AGENTS.md"
 ln -sfn "$SCRIPT_DIR/codex/agents" "$TARGET_DIR/agents"
-ln -sfn "$SCRIPT_DIR/codex/config.toml" "$TARGET_DIR/config.toml"
+# config.toml stays a real file owned by the Codex app, which rewrites it.
 
 echo "Symlinks created in $TARGET_DIR"

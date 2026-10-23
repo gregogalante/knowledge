@@ -9,7 +9,6 @@ BUILT_PATHS=(
   claude/CLAUDE.md
   codex/AGENTS.md
   codex/agents
-  codex/config.toml
   opencode/AGENTS.md
   opencode/agents
   opencode/opencode.json
@@ -89,7 +88,6 @@ check_link "$HOME/.claude/CLAUDE.md" claude/CLAUDE.md
 echo "Codex"
 check_link "$HOME/.codex/AGENTS.md" codex/AGENTS.md
 check_link "$HOME/.codex/agents" codex/agents
-check_link "$HOME/.codex/config.toml" codex/config.toml
 
 echo "OpenCode"
 check_link "$HOME/.config/opencode/AGENTS.md" opencode/AGENTS.md
