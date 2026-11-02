@@ -2,6 +2,13 @@
 
 Skip these rules if not a git repo (`git rev-parse --is-inside-work-tree` fails).
 
+Start of work (before any task in a repo):
+- Sync, fast-forward only: `git fetch --prune`, then update default branch (name from `git symbolic-ref refs/remotes/origin/HEAD`; `git fetch origin <default>:<default>` if not on it) and current branch if it has upstream (`git pull --ff-only`). Fails (diverged, conflicts) → report, never force.
+- Uncommitted or untracked files (`git status`) → report them before starting.
+- Stashes (`git stash list`) → report them before starting.
+- Local branches not pushed (`git branch -vv`: no upstream, ahead, or upstream `gone`) → report them before starting.
+- Report only. Never commit, stash, push, or delete to clean up without user's yes.
+
 Branching:
 - No direct work on `main` / `master`. Create branch first.
 - User explicitly names main/master in request (e.g. "commit on main", "push to main") = confirmation given, proceed. Landing on main without that request → ask first.
