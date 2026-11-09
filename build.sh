@@ -9,6 +9,7 @@ OPENCODE_OUT_DIR="$REPO_ROOT/opencode/agents"
 OPENCODE_CONFIG_OUT="$REPO_ROOT/opencode/opencode.json"
 CODEX_OUT_DIR="$REPO_ROOT/codex/agents"
 CLAUDE_OUT_DIR="$REPO_ROOT/claude"
+CLAUDE_RULES_SRC="$SRC_DIR/claude/_claude-rules.md"
 # Global agent: its instructions become user-level rules (CLAUDE.md / AGENTS.md)
 # loaded in every session, not just a selectable agent prompt.
 GLOBAL_AGENT="_developer"
@@ -151,6 +152,12 @@ for rule_file in "${GLOBAL_RULE_FILES[@]}"; do
   extract_developer_instructions "$GLOBAL_SRC_FILE" "$rule_file"
   echo "  → ${rule_file#"$REPO_ROOT/"}"
 done
+
+# Rules relying on Claude-only tools stay out of Codex/OpenCode output.
+if [[ -f "$CLAUDE_RULES_SRC" ]]; then
+  cat "$CLAUDE_RULES_SRC" >> "$CLAUDE_OUT_DIR/CLAUDE.md"
+  echo "  → claude/CLAUDE.md (+ ${CLAUDE_RULES_SRC#"$REPO_ROOT/"})"
+fi
 
 echo ""
 echo "Build complete. $(date '+%Y-%m-%d %H:%M:%S')"

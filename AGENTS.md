@@ -5,8 +5,9 @@ Repo rules.
 - `src/` is source of truth.
 - `src/shared/` holds reusable fragments, pulled in via `<!-- @include shared/<file>.md -->`.
 - `src/agents/_developer.toml` is global agent: its `developer_instructions` become user-level rules for every tool.
+- `src/claude/_claude-rules.md` holds Claude-only rules (rely on Claude-only tools), appended to `claude/CLAUDE.md` only.
 - `build.sh` compiles into:
-  - `claude/CLAUDE.md`, `codex/AGENTS.md`, `opencode/AGENTS.md`: global rules (same content).
+  - `claude/CLAUDE.md`, `codex/AGENTS.md`, `opencode/AGENTS.md`: global rules (same content, plus Claude-only rules in `CLAUDE.md`).
   - `codex/agents/*.toml`: Codex subagents.
   - `opencode/agents/*.md`: OpenCode agents (frontmatter; global agent has no body, rules come from `AGENTS.md`). `opencode/opencode.json` copied from `src/opencode/`.
 - `install-claude.sh` links `~/.claude/CLAUDE.md`.
