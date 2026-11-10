@@ -3,7 +3,7 @@
 
 ### Session title
 
-If a session-rename tool is available (e.g. `mcp__ccd_session_mgmt__set_session_title` in the desktop app; load it via ToolSearch if deferred), set the title on the first turn of every session, before other work.
+If a session-rename tool is available (e.g. `mcp__ccd_session_mgmt__set_session_title` in the desktop app; load it via ToolSearch if deferred), set the title on the first turn of every session, before other work (including git start-of-work checks).
 
 First read current title (`mcp__ccd_session_mgmt__get_session` with `"self"`). Title starts with an emoji → never rename: it marks a permanent agent. Title unreadable → skip renaming.
 

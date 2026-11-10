@@ -24,4 +24,4 @@ No system-level Ruby. rbenv controls active version. `.ruby-version` is auto-res
 
 ### Docker
 
-Installed and available. Use `docker ps` to check running containers. Stop any containers you start when done.
+Installed and available. Use `docker ps` to check running containers.

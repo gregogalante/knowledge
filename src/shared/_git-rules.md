@@ -10,22 +10,20 @@ Start of work (before any task in a repo):
 - Report only. Never commit, stash, push, or delete to clean up without user's yes.
 
 Branching:
-- No direct work on `main` / `master`. Create branch first.
-- User explicitly names main/master in request (e.g. "commit on main", "push to main") = confirmation given, proceed. Landing on main without that request → ask first.
+- No direct work on `main` / `master`. Create branch first, unless user explicitly names main/master in request (e.g. "commit on main", "push to main"): that counts as confirmation.
 - Branch name: conventional prefix + descriptive slug. Prefixes: `feature/`, `bugfix/`, `hotfix/`, `chore/`, `refactor/`, `docs/`, `test/`. Example: `feature/add-user-endpoint`.
 
 Commit (trigger: user says `commit`):
 - Use conventional commits: `type(scope): subject`. Types: `feat`, `fix`, `chore`, `refactor`, `docs`, `test`, `style`, `perf`.
 - Subject: imperative, present tense, lowercase, no trailing period. Example: `feat(auth): add login endpoint`.
-- Commit only. Do NOT push.
 - Respect repo config: GPG sign, DCO sign-off, hooks. Never bypass with `--no-verify`.
 
 Push (trigger: user says `push`):
-- Explicit step, separate from commit.
+- Separate step: a commit never implies a push.
 - Ask confirmation before `push --force` or `push --force-with-lease`.
 
 End of work:
-- Task done and repo has uncommitted changes or unpushed commits (`git status`, `git log @{u}..`) → ask user whether to commit and push. Never do it without their yes: commit and push triggers above still apply.
+- Task done and repo has uncommitted changes or unpushed commits (`git status`, `git log @{u}..`) → ask user whether to commit and push; act only on their yes.
 - Branch has no upstream → ask too, since work exists only locally.
 
 Pull request (trigger: user says `pull request` / `pr`):

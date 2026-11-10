@@ -4,7 +4,7 @@ Repo config wins: existing linter/formatter config (`.eslintrc`, `.prettierrc`, 
 
 ### Comments
 
-English. Comment non-obvious why (intent, constraint, workaround), not what. Match comment density of surrounding code. No comments restating code.
+Comment non-obvious why (intent, constraint, workaround), not what. Match comment density of surrounding code. No comments restating code.
 
 ### JavaScript
 

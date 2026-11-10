@@ -1,6 +1,6 @@
 # Knowledge
 
-`src/` is source of truth. `build.sh` generates per-tool files; install scripts symlink them into each tool's user config. See [AGENTS.md](AGENTS.md) for output layout.
+Compiles shared agent rules into per-tool configs for Claude Code, Codex and OpenCode. Layout and conventions: [AGENTS.md](AGENTS.md).
 
 ## Build
 

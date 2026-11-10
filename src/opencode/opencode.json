@@ -3,19 +3,10 @@
   "permission": {
     "bash": {
       "*": "ask",
-      "cat *": "allow",
       "ls *": "allow",
-      "ls -l *": "allow",
-      "grep *": "allow",
       "mkdir *": "allow",
-      "find *": "allow",
       "source *": "allow",
-      "source ~/.zshrc": "allow",
-      "source ~/.zshrc && *": "allow",
       "which *": "allow",
-      "tail *": "allow",
-      "sed *": "allow",
-      "head *": "allow",
       "npm *": "allow",
       "npx *": "allow",
       "node *": "allow",
@@ -27,9 +18,15 @@
       "pip3 *": "allow",
       "bin/rails *": "allow",
       "rails *": "allow",
-      "git *": "allow",
-      "docker *": "allow",
-      "docker-compose *": "allow"
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git branch -vv": "allow",
+      "git stash list": "allow",
+      "git fetch*": "allow",
+      "docker ps*": "allow",
+      "docker logs *": "allow"
     },
     "read": {
       "*": "allow",

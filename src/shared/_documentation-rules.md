@@ -10,8 +10,6 @@ Create or update it only when user asks, or when change affects what it covers (
 
 Split into `docs/` when `AGENTS.md` exceeds ~300 lines or covers >3 distinct domains. Markdown only, clear headings, no fluff.
 
-Language: English.
-
 Things to write:
 - Project overview and purpose
 - Shared rules: coding style, local env setup
@@ -32,4 +30,4 @@ Reports, analyses, ad-hoc documentation files and similar deliverables requested
 
 - Location: `~/Desktop`, unless user explicitly says to put them in the repo. Report the full path when done.
 - Language: user's language.
-- Format: whatever fits the request; in-repo rules above do not apply.
+- Format: whatever fits the request.

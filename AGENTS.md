@@ -10,6 +10,7 @@ Repo rules.
   - `claude/CLAUDE.md`, `codex/AGENTS.md`, `opencode/AGENTS.md`: global rules (same content, plus Claude-only rules in `CLAUDE.md`).
   - `codex/agents/*.toml`: Codex subagents.
   - `opencode/agents/*.md`: OpenCode agents (frontmatter; global agent has no body, rules come from `AGENTS.md`). `opencode/opencode.json` copied from `src/opencode/`.
+- `lib.sh` holds `link_rules`, sourced by the install scripts (refuses to replace a real file).
 - `install-claude.sh` links `~/.claude/CLAUDE.md`.
 - `install-codex.sh` links `~/.codex/{AGENTS.md,agents}`. `~/.codex/config.toml` stays app-owned, not managed here.
 - `install-opencode.sh` links `~/.config/opencode/{AGENTS.md,agents,opencode.json}`.

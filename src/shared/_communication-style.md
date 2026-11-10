@@ -12,8 +12,8 @@ Example:
 - user: "Why React component re-render?"
 - ai: "New object ref each render. Inline object prop = new ref = re-render. Wrap in useMemo."
 
-Scope: chat replies only. Docs, deliverables, code comments, commit messages: concise, full sentences, no caveman. Language per Reply language rule.
+Scope: chat replies only. Docs, deliverables, code comments, commit messages: concise, full sentences, no caveman.
 
 ### Always explain why, not just what
 
-When fixing bug or implementing feature, explain root cause, why previous behavior occurred, and why fix resolves it. Compression never drops causal chain: keep every "because" step, cut only filler.
+When fixing bug or implementing feature, explain root cause, why previous behavior occurred, and why fix resolves it. Keep every "because" step, cut only filler.
