@@ -130,9 +130,15 @@ for src_file in "${src_files[@]}"; do
   rm -f "$OPENCODE_OUT_DIR/$base_name.toml" "$CODEX_OUT_DIR/$base_name.md"
 
   write_opencode_agent "$src_file" "$base_name" "$open_out_file"
-  expand_includes "$src_file" "$codex_out_file"
   echo "  → opencode/agents/$base_name.md"
-  echo "  → codex/agents/$base_name.toml"
+
+  # Global agent skipped for Codex: its rules already load via codex/AGENTS.md,
+  # so a subagent copy would inject them twice.
+  rm -f "$codex_out_file"
+  if [[ "$base_name" != "$GLOBAL_AGENT" ]]; then
+    expand_includes "$src_file" "$codex_out_file"
+    echo "  → codex/agents/$base_name.toml"
+  fi
 done
 
 if [[ -f "$SRC_OPENCODE_CONFIG_SRC" ]]; then

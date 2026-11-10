@@ -8,7 +8,7 @@ Repo rules.
 - `src/claude/_claude-rules.md` holds Claude-only rules (rely on Claude-only tools), appended to `claude/CLAUDE.md` only.
 - `build.sh` compiles into:
   - `claude/CLAUDE.md`, `codex/AGENTS.md`, `opencode/AGENTS.md`: global rules (same content, plus Claude-only rules in `CLAUDE.md`).
-  - `codex/agents/*.toml`: Codex subagents.
+  - `codex/agents/*.toml`: Codex subagents (global agent excluded: its rules already load via `codex/AGENTS.md`).
   - `opencode/agents/*.md`: OpenCode agents (frontmatter; global agent has no body, rules come from `AGENTS.md`). `opencode/opencode.json` copied from `src/opencode/`.
 - `lib.sh` holds `link_rules`, sourced by the install scripts (refuses to replace a real file).
 - `install-claude.sh` links `~/.claude/CLAUDE.md`.
